@@ -1,8 +1,10 @@
 import { LitElement, html } from "lit";
 import { customElement } from "lit/decorators.js";
 import { textsApi } from "src/api/localTextsApi";
+import { withTwind } from "src/utils/twindDecorator";
 
 @customElement("text-post")
+@withTwind()
 class AddItem extends LitElement {
   render() {
     return html`
