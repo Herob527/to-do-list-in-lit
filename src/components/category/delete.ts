@@ -16,29 +16,32 @@ class CategoryDelete extends LitElement {
   constructor() {
     super();
     this.categories = categoryApi.getAll();
-    this.category = this.categories[0].id;
+    this.category = this.categories.length > 0 ? this.categories[0].id : "";
 
     window.addEventListener("storage", () => {
       this.categories = categoryApi.getAll();
+      this.category = this.categories.length > 0 ? this.categories[0].id : "";
     });
   }
 
   protected render() {
     return html`
       <div
-        class="flex flex-col gap-2 items-center p-2 rounded-xl border-2 border-gray-300"
+        class="flex flex-col gap-2 items-center p-2 text-center rounded-xl border-2 border-gray-300"
       >
         <p>Remove Category</p>
         <select
           @change=${this.handleChange}
           class="p-2 w-full bg-gray-50 rounded-xl border-2 border-gray-300"
         >
-          ${repeat(
-            this.categories,
-            (item) => item.id,
-            (category) =>
-              html`<option value=${category.id}>${category.value}</option>`,
-          )}
+          ${this.categories.length > 0
+            ? repeat(
+                this.categories,
+                (item) => item.id,
+                (category) =>
+                  html`<option value=${category.id}>${category.value}</option>`,
+              )
+            : html`<option>None</option>`}
         </select>
         <button
           @click=${this.removeItem}
