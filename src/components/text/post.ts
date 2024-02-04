@@ -10,7 +10,7 @@ class TextPost extends LitElement {
     return html`
       <button
         @click=${this.addItem}
-        class="py-2 px-4 mx-2 bg-gray-50 border-2 border-gray-300 transition-colors hover:bg-gray-200"
+        class="py-2 px-4 bg-gray-50 border-2 border-gray-300 transition-colors hover:bg-gray-200"
       >
         <span>Add</span>
       </button>
