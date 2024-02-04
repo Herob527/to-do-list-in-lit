@@ -1,11 +1,14 @@
 import { LitElement, html } from "lit";
-import { customElement, state } from "lit/decorators.js";
+import { customElement, query, state } from "lit/decorators.js";
 import { categoryApi } from "src/api/localCategoryApi";
 import { withTwind } from "src/utils/twindDecorator";
 
 @customElement("category-post")
 @withTwind()
 class CategoryPost extends LitElement {
+  @query("input")
+  element!: HTMLInputElement;
+
   @state()
   private category: string = "";
 
@@ -33,6 +36,7 @@ class CategoryPost extends LitElement {
   }
   private addItem() {
     categoryApi.addNewItem({ value: this.category });
+    this.element.value = "";
   }
 }
 
