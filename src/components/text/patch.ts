@@ -31,7 +31,7 @@ export class TextPatch extends LitElement {
   }
   protected updated(): void {
     if (this.text === "") return;
-    textsApi.setItem(this.id, { category: this.category, value: this.text });
+    textsApi.patchItem(this.id, { category: this.category, value: this.text });
   }
 }
 
