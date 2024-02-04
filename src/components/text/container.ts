@@ -23,25 +23,23 @@ class TextsContainer extends LitElement {
     });
   }
 
-  private addItem() {
-    textsApi.addNewItem();
-  }
-
   render() {
-    return this.items.length > 0
-      ? html`<div class="flex flex-col gap-1.5">
-          ${repeat<TextEntry>(
-            this.items,
-            (item) => item.id,
-            (item) =>
-              html`<text-input
-                id=${item.id}
-                text=${item.value}
-                category=${item.category}
-              ></text-input>`,
-          )}
-        </div> `
-      : html` <button @click=${this.addItem}>Add Text</button> `;
+    return (
+      this.items.length > 0 &&
+      html`
+        ${repeat<TextEntry>(
+          this.items,
+          (item) => item.id,
+          (item) =>
+            html`<text-patch
+              class="inline-flex gap-3 basis-[25%]"
+              id=${item.id}
+              text=${item.value}
+              category=${item.category}
+            ></text-patch>`,
+        )}
+      `
+    );
   }
 }
 
