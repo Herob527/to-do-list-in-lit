@@ -2,12 +2,12 @@ import { LitElement, html } from "lit";
 import { customElement } from "lit/decorators.js";
 import { textsApi } from "src/api/localTextsApi";
 
-@customElement("add-item")
+@customElement("text-post")
 class AddItem extends LitElement {
   render() {
     return html`
       <button @click=${this.addItem}>
-        <span>Test</span>
+        <span>Add</span>
       </button>
     `;
   }
@@ -18,6 +18,6 @@ class AddItem extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "add-item": AddItem;
+    "text-post": AddItem;
   }
 }

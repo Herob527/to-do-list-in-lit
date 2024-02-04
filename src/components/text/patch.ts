@@ -2,8 +2,10 @@ import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import "src/components/text/delete";
 import { textsApi } from "src/api/localTextsApi";
+import { withTwind } from "src/utils/twindDecorator";
 
-@customElement("text-input")
+@customElement("text-patch")
+@withTwind()
 export class TextInput extends LitElement {
   @property({ type: String })
   category: string = "";
@@ -16,17 +18,15 @@ export class TextInput extends LitElement {
 
   render() {
     return html`
-      <div>
-        <input
-          type="text"
-          class="bg-blue-50"
-          .id=${this.id}
-          @input=${(text: InputEvent) =>
-            (this.text = (text.currentTarget as HTMLInputElement).value)}
-          .value=${this.text}
-        />
-        <delete-item id=${this.id}></delete-item>
-      </div>
+      <input
+        type="text"
+        class="flex-1 bg-blue-500"
+        .id=${this.id}
+        @input=${(text: InputEvent) =>
+          (this.text = (text.currentTarget as HTMLInputElement).value)}
+        .value=${this.text}
+      ></input>
+      <text-delete id=${this.id}></text-delete>
     `;
   }
   protected updated(): void {
@@ -37,6 +37,6 @@ export class TextInput extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "text-input": TextInput;
+    "text-patch": TextInput;
   }
 }

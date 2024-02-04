@@ -3,10 +3,10 @@ import { customElement, property } from "lit/decorators.js";
 import { textsApi } from "src/api/localTextsApi";
 import { withTwind } from "src/utils/twindDecorator";
 
-@customElement("delete-item")
-@withTwind
+@customElement("text-delete")
+@withTwind()
 class DeleteItem extends LitElement {
-  @property({})
+  @property({ type: String })
   id = "";
 
   render() {
@@ -26,6 +26,6 @@ class DeleteItem extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "delete-item": DeleteItem;
+    "text-delete": DeleteItem;
   }
 }

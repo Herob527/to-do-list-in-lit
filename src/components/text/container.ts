@@ -7,7 +7,7 @@ import { textsApi } from "src/api/localTextsApi";
 import type { TextEntry } from "src/api/type";
 
 @customElement("texts-container")
-@withTwind
+@withTwind()
 class TextsContainer extends LitElement {
   @property({
     state: true,
