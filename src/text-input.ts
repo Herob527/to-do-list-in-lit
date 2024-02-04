@@ -27,7 +27,6 @@ export class TextInput extends LitElement {
     `;
   }
   protected updated(): void {
-    console.log("updated");
     if (this.text === "") return;
     api.setItem(this.id, this.text);
   }
