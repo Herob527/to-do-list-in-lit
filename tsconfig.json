@@ -23,6 +23,13 @@
 
     /* Paths */
     "baseUrl": ".",
+
+    /* Plugins */
+    "plugins": [
+      {
+        "name": "ts-lit-plugin"
+      }
+    ]
   },
   "include": ["src"]
 }
