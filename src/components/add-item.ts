@@ -1,6 +1,6 @@
 import { LitElement, html } from "lit";
 import { customElement } from "lit/decorators.js";
-import { api } from "src/api/localStorageApi";
+import { textsApi } from "src/api/localTextsApi";
 
 @customElement("add-item")
 class AddItem extends LitElement {
@@ -12,7 +12,7 @@ class AddItem extends LitElement {
     `;
   }
   addItem() {
-    api.addNewItem();
+    textsApi.addNewItem();
   }
 }
 

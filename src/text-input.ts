@@ -1,10 +1,13 @@
 import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import "src/components/delete-item";
-import { api } from "./api/localStorageApi";
+import { textsApi } from "./api/localTextsApi";
 
 @customElement("text-input")
 export class TextInput extends LitElement {
+  @property({ type: String })
+  category: string = "";
+
   @property({ type: String })
   id: string = "";
 
@@ -28,7 +31,7 @@ export class TextInput extends LitElement {
   }
   protected updated(): void {
     if (this.text === "") return;
-    api.setItem(this.id, this.text);
+    textsApi.setItem(this.id, { category: this.category, value: this.text });
   }
 }
 

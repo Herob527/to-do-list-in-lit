@@ -1,6 +1,6 @@
 import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import { api } from "src/api/localStorageApi";
+import { textsApi } from "src/api/localTextsApi";
 import { withTwind } from "src/utils/twindDecorator";
 
 @customElement("delete-item")
@@ -20,7 +20,7 @@ class DeleteItem extends LitElement {
     `;
   }
   deleteItem() {
-    api.deleteItem(this.id);
+    textsApi.deleteItem(this.id);
   }
 }
 
