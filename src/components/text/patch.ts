@@ -20,7 +20,7 @@ export class TextInput extends LitElement {
     return html`
       <input
         type="text"
-        class="flex-1 bg-blue-500"
+        class="flex-1 p-2 bg-gray-50 border-2 border-gray-300"
         .id=${this.id}
         @input=${(text: InputEvent) =>
           (this.text = (text.currentTarget as HTMLInputElement).value)}

@@ -33,7 +33,7 @@ class TextsContainer extends LitElement {
           (item) => item.id,
           (item) =>
             html`<text-patch
-              class="inline-flex gap-3 basis-[25%]"
+              class="inline-flex gap-2 basis-[calc(20%-1rem)] items-center justify-start"
               id=${item.id}
               text=${item.value}
               category=${item.category}
