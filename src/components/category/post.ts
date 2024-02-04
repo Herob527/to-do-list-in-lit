@@ -12,7 +12,7 @@ class CategoryPost extends LitElement {
   protected render() {
     return html`
       <div
-        class="flex flex-col gap-2 items-center p-2 rounded-xl border-2 border-gray-300"
+        class="flex flex-col gap-2 items-center p-2 text-center rounded-xl border-2 border-gray-300"
       >
         <p>Add Category</p>
         <input
