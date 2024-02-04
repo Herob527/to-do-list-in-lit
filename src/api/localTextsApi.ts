@@ -38,7 +38,7 @@ const localTextsApi = () => {
         (e: TextEntry) => e.id === id,
       ) as TextEntry,
 
-    setItem: (id, { value, category }) => {
+    patchItem: (id, { value, category }) => {
       const entries: TextEntry[] = JSON.parse(
         localStorage.getItem(LOCAL_TEXT_STORAGE_KEY) || "[]",
       );
