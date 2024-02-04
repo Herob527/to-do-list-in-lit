@@ -1,8 +1,7 @@
 import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import { LOCAL_STORAGE_KEY } from "./constants";
-import type { localStorageEntry } from "./types";
 import "src/components/delete-item";
+import { api } from "./api/localStorageApi";
 
 @customElement("text-input")
 export class TextInput extends LitElement {
@@ -19,7 +18,8 @@ export class TextInput extends LitElement {
           type="text"
           class="bg-blue-50"
           .id=${this.id}
-          @input=${(text: Event) => (this.text = text.currentTarget.value)}
+          @input=${(text: InputEvent) =>
+            (this.text = (text.currentTarget as HTMLInputElement).value)}
           .value=${this.text}
         />
         <delete-item id=${this.id}></delete-item>
@@ -29,13 +29,7 @@ export class TextInput extends LitElement {
   protected updated(): void {
     console.log("updated");
     if (this.text === "") return;
-    const entries: localStorageEntry[] = JSON.parse(
-      localStorage.getItem(LOCAL_STORAGE_KEY) || "[]",
-    );
-    const newEntry = { id: this.id, value: this.text };
-    const entryIndex = entries.findIndex((entry) => entry.id === this.id);
-    entries[entryIndex] = newEntry;
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify([...entries]));
+    api.setItem(this.id, this.text);
   }
 }
 

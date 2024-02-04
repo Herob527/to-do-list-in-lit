@@ -1,11 +1,10 @@
 import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { repeat } from "lit/directives/repeat.js";
-import { v4 } from "uuid";
 import "/src/text-input";
-import { LOCAL_STORAGE_KEY } from "./constants";
 import { type localStorageEntry } from "src/types";
 import { withTwind } from "./utils/twindDecorator";
+import { api } from "./api/localStorageApi";
 
 @customElement("texts-container")
 @withTwind
@@ -17,22 +16,15 @@ class TextsContainer extends LitElement {
 
   constructor() {
     super();
-    const texts = JSON.parse(
-      localStorage.getItem(LOCAL_STORAGE_KEY) || "[]",
-    ) as localStorageEntry[];
-
+    const texts = api.getAll();
     this.items = texts;
     window.addEventListener("storage", () => {
-      this.items = JSON.parse(
-        localStorage.getItem(LOCAL_STORAGE_KEY) || "[]",
-      ) as localStorageEntry[];
+      this.items = api.getAll();
     });
   }
 
   private addItem() {
-    const dataItem = [{ id: v4(), value: "" }] satisfies localStorageEntry[];
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(dataItem));
-    this.items = dataItem;
+    api.addNewItem();
   }
 
   render() {
