@@ -13,7 +13,7 @@ class TextDelete extends LitElement {
     return html`
       <button
         @click=${this.deleteItem}
-        class="inline-flex justify-center items-center p-4 w-2 h-2 bg-gray-200"
+        class="inline-flex justify-center items-center p-4 w-2 h-2 bg-gray-200 transition-colors hover:bg-gray-300"
       >
         -
       </button>
