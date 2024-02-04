@@ -24,6 +24,10 @@ const localCategoryApi = () => {
         localStorage.getItem(LOCAL_CATEGORY_STORAGE_KEY) || "[]",
       ) as CategoryEntry[];
 
+      if (currentData.find((e) => e.value === param?.value)) {
+        return;
+      }
+
       localStorage.setItem(
         LOCAL_CATEGORY_STORAGE_KEY,
         JSON.stringify([...currentData, dataItem]),
