@@ -3,8 +3,7 @@ import { customElement, property } from "lit/decorators.js";
 import { repeat } from "lit/directives/repeat.js";
 import "src/components/text/patch";
 import { withTwind } from "src/utils/twindDecorator";
-import { textsApi } from "src/api/localTextsApi";
-import type { TextEntry } from "src/api/type";
+import { textsApi, type TextEntry } from "src/api/localTextsApi";
 
 @customElement("texts-container")
 @withTwind()
