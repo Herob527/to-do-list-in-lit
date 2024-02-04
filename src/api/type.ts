@@ -7,7 +7,7 @@ export interface TextEntry extends Entry {
   category: string;
 }
 
-export interface Api<T = Entry> {
+export interface Api<T extends Entry = Entry> {
   getAll(): T[] | Promise<T[]>;
   addNewItem(): void | Promise<void>;
   getItem(id: string): T | Promise<T>;
