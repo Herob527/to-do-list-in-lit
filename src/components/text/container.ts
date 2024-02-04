@@ -25,22 +25,22 @@ class TextsContainer extends LitElement {
   }
 
   render() {
-    return (
-      this.items.length > 0 &&
-      html`
-        ${repeat<TextEntry>(
-          this.items,
-          (item) => item.id,
-          (item) =>
-            html`<text-patch
-              class="inline-flex gap-2 basis-[calc(20%-1rem)] items-center justify-start"
-              id=${item.id}
-              text=${item.value}
-              category=${item.category}
-            ></text-patch>`,
-        )}
-      `
-    );
+    const { items } = this;
+    return items.length > 0
+      ? html`
+          ${repeat<TextEntry>(
+            items,
+            (item) => item.id,
+            (item) =>
+              html`<text-patch
+                class="inline-flex gap-2 basis-[calc(25%-0.75rem)] items-center justify-start"
+                id=${item.id}
+                text=${item.value}
+                category=${item.category}
+              ></text-patch>`,
+          )}
+        `
+      : html`<p class="m-0">No data</p>`;
   }
 }
 
