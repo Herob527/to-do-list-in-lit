@@ -5,7 +5,7 @@ import { withTwind } from "src/utils/twindDecorator";
 
 @customElement("text-delete")
 @withTwind()
-class DeleteItem extends LitElement {
+class TextDelete extends LitElement {
   @property({ type: String })
   id = "";
 
@@ -26,6 +26,6 @@ class DeleteItem extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "text-delete": DeleteItem;
+    "text-delete": TextDelete;
   }
 }

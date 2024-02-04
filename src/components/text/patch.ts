@@ -6,7 +6,7 @@ import { withTwind } from "src/utils/twindDecorator";
 
 @customElement("text-patch")
 @withTwind()
-export class TextInput extends LitElement {
+export class TextPatch extends LitElement {
   @property({ type: String })
   category: string = "";
 
@@ -37,6 +37,6 @@ export class TextInput extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "text-patch": TextInput;
+    "text-patch": TextPatch;
   }
 }

@@ -5,7 +5,7 @@ import { withTwind } from "src/utils/twindDecorator";
 
 @customElement("text-post")
 @withTwind()
-class AddItem extends LitElement {
+class TextPost extends LitElement {
   render() {
     return html`
       <button @click=${this.addItem}>
@@ -20,6 +20,6 @@ class AddItem extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "text-post": AddItem;
+    "text-post": TextPost;
   }
 }
