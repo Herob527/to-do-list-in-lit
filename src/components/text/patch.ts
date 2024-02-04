@@ -3,6 +3,7 @@ import { customElement, property } from "lit/decorators.js";
 import "src/components/text/delete";
 import { textsApi } from "src/api/localTextsApi";
 import { withTwind } from "src/utils/twindDecorator";
+import "src/components/category/patch";
 
 @customElement("text-patch")
 @withTwind()
@@ -27,10 +28,16 @@ export class TextPatch extends LitElement {
         .value=${this.text}
       ></input>
       <text-delete id=${this.id}></text-delete>
+      <category-patch id=${this.category} @change=${this.handleCategoryChange}></category-patch>
+
     `;
   }
+
+  protected handleCategoryChange(value: CustomEvent) {
+    this.category = value.detail;
+  }
+
   protected updated(): void {
-    if (this.text === "") return;
     textsApi.patchItem(this.id, { category: this.category, value: this.text });
   }
 }
