@@ -27,8 +27,9 @@ export class TextPatch extends LitElement {
           (this.text = (text.currentTarget as HTMLInputElement).value)}
         .value=${this.text}
       ></input>
-      <text-delete id=${this.id} class="flex h-full"></text-delete>
-      <category-patch id=${this.category} @change=${this.handleCategoryChange} class="min-w-[5rem]"></category-patch>
+
+      <category-patch id=${this.category} @change=${this.handleCategoryChange} class="flex overflow-hidden flex-col justify-center items-center h-full border-2 border-gray-300 min-w-[5rem]"></category-patch>
+      <text-delete id=${this.id} class="flex overflow-hidden h-full rounded-r-xl"></text-delete>
 
     `;
   }
