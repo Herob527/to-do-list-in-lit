@@ -2,7 +2,7 @@ import { LOCAL_CATEGORY_STORAGE_KEY } from "src/constants";
 import type { Api, Entry } from "./type";
 import { v4 } from "uuid";
 
-interface CategoryEntry extends Entry {}
+export interface CategoryEntry extends Entry {}
 
 const localCategoryApi = () => {
   if (!localStorage.getItem(LOCAL_CATEGORY_STORAGE_KEY)) {
