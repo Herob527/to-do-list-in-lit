@@ -11,6 +11,7 @@ import type { TextEntry } from "src/api/type";
 class TextsContainer extends LitElement {
   @property({
     state: true,
+    type: Array,
   })
   protected items: TextEntry[];
 
