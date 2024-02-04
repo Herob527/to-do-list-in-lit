@@ -1,7 +1,7 @@
 import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import "src/components/delete-item";
-import { textsApi } from "./api/localTextsApi";
+import "src/components/text/delete";
+import { textsApi } from "src/api/localTextsApi";
 
 @customElement("text-input")
 export class TextInput extends LitElement {

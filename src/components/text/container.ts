@@ -1,10 +1,10 @@
 import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { repeat } from "lit/directives/repeat.js";
-import "/src/text-input";
-import { withTwind } from "./utils/twindDecorator";
-import { textsApi } from "./api/localTextsApi";
-import type { TextEntry } from "./api/type";
+import "src/components/text/patch";
+import { withTwind } from "src/utils/twindDecorator";
+import { textsApi } from "src/api/localTextsApi";
+import type { TextEntry } from "src/api/type";
 
 @customElement("texts-container")
 @withTwind
