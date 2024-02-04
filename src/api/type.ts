@@ -3,10 +3,6 @@ export interface Entry {
   value: string;
 }
 
-export interface TextEntry extends Entry {
-  category: string;
-}
-
 export interface Api<T extends Entry = Entry> {
   getAll(): T[] | Promise<T[]>;
   addNewItem(): void | Promise<void>;
