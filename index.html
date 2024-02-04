@@ -7,8 +7,9 @@
     <title>Vite + Lit + TS</title>
     <link rel="stylesheet" href="/src/index.css" />
     <script type="module" src="/src/components/text/container.ts"></script>
-    <script type="module" src="/src/components/category/post.ts"></script>
     <script type="module" src="/src/components/text/post.ts"></script>
+    <script type="module" src="/src/components/category/post.ts"></script>
+    <script type="module" src="/src/components/category/delete.ts"></script>
   </head>
   <body class="h-screen bg-gray-50">
     <main class="flex flex-row h-full">
@@ -18,8 +19,9 @@
         </texts-container>
         <text-post class="inline-block relative mt-2"></text-post>
       </div>
-      <div class="p-2 basis-[20%] bg-gray-100 h-full">
+      <div class="p-2 basis-[20%] bg-gray-100 h-full flex flex-col gap-2">
         <category-post></category-post>
+        <category-delete></category-delete>
       </div>
     </main>
   </body>
