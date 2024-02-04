@@ -14,10 +14,10 @@ const localCategoryApi = () => {
         localStorage.getItem(LOCAL_CATEGORY_STORAGE_KEY) || "[]",
       ) as CategoryEntry[],
 
-    addNewItem: () => {
+    addNewItem: (param) => {
       const dataItem = {
         id: v4(),
-        value: "",
+        value: param?.value ?? "",
       } satisfies CategoryEntry;
 
       const currentData = JSON.parse(
