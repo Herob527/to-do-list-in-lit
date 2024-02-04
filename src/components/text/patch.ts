@@ -21,14 +21,14 @@ export class TextPatch extends LitElement {
     return html`
       <input
         type="text"
-        class="flex-1 p-2 bg-gray-50 border-2 border-gray-300"
+        class="flex-1 p-2 bg-gray-50 rounded-l-xl border-2 border-gray-300"
         .id=${this.id}
         @input=${(text: InputEvent) =>
           (this.text = (text.currentTarget as HTMLInputElement).value)}
         .value=${this.text}
       ></input>
-      <text-delete id=${this.id}></text-delete>
-      <category-patch id=${this.category} @change=${this.handleCategoryChange}></category-patch>
+      <text-delete id=${this.id} class="flex h-full"></text-delete>
+      <category-patch id=${this.category} @change=${this.handleCategoryChange} class="min-w-[5rem]"></category-patch>
 
     `;
   }
