@@ -57,7 +57,6 @@ class CategoryDelete extends LitElement {
     this.category = value;
   }
   private removeItem() {
-    console.log(this.category);
     categoryApi.deleteItem(this.category);
   }
 }
