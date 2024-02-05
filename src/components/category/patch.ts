@@ -29,7 +29,7 @@ class CategoryPatch extends LitElement {
         class="p-2 w-full bg-gray-50 min-w-[5rem]"
       >
         ${this.categories.length > 0
-          ? html` <option>None</option>
+          ? html` <option value="None">None</option>
               ${repeat(
                 this.categories,
                 (item) => item.id,

@@ -25,7 +25,7 @@ class CategorySearch extends LitElement {
         ${this.categories.length > 0
           ? html`<option value="">All</option>
               ${repeat(
-                this.categories,
+                [...this.categories, { id: "None", value: "None" }],
                 (item) => item.id,
                 (item) =>
                   html`<option
