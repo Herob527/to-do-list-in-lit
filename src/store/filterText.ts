@@ -1,3 +1,3 @@
 import { atom } from "nanostores";
 
-export const $filterText = atom("");
+export const $filterCategory = atom("");

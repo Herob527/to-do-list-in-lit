@@ -1,7 +1,7 @@
 import { LitElement, html } from "lit";
 import { customElement, state } from "lit/decorators.js";
 import { withTwind } from "src/utils/twindDecorator";
-import { $filterText } from "src/store/filterText";
+import { $filterCategory } from "src/store/filterText";
 import { categoryApi, type CategoryEntry } from "src/api/localCategoryApi";
 import { repeat } from "lit/directives/repeat.js";
 
@@ -41,7 +41,7 @@ class CategorySearch extends LitElement {
   }
   handleChange(e: Event) {
     const { value } = e.currentTarget as HTMLInputElement;
-    $filterText.set(value);
+    $filterCategory.set(value);
   }
 }
 
