@@ -8,16 +8,24 @@
     <link rel="stylesheet" href="/src/index.css" />
     <script type="module" src="/src/components/text/container.ts"></script>
     <script type="module" src="/src/components/text/post.ts"></script>
+    <script type="module" src="/src/components/category/search.ts"></script>
     <script type="module" src="/src/components/category/post.ts"></script>
     <script type="module" src="/src/components/category/delete.ts"></script>
   </head>
-  <body class="h-screen bg-gray-50">
-    <main class="flex flex-row h-full">
+  <body class="flex flex-col h-screen bg-gray-50">
+    <div class="flex flex-row gap-2 py-2 px-4 bg-gray-200">
+      <text-post
+        class="inline-block overflow-hidden relative rounded-l-xl border-2 border-gray-300"
+      ></text-post>
+      <category-search
+        class="inline-block overflow-hidden relative border-2 border-gray-300"
+      ></category-search>
+    </div>
+    <main class="flex flex-row flex-1">
       <div class="p-2 basis-[75%]">
         <texts-container class="flex flex-row flex-wrap gap-3">
           <p>Loading</p>
         </texts-container>
-        <text-post class="inline-block relative mt-2"></text-post>
       </div>
       <div class="p-2 basis-[25%] bg-gray-100 h-full flex flex-col gap-2">
         <category-post></category-post>

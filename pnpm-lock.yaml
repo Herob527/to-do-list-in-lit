@@ -5,9 +5,15 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@nanostores/lit':
+    specifier: ^0.2.0
+    version: 0.2.0(lit@3.1.2)(nanostores@0.9.5)
   lit:
     specifier: ^3.1.0
     version: 3.1.2
+  nanostores:
+    specifier: ^0.9.5
+    version: 0.9.5
   uuid:
     specifier: ^9.0.1
     version: 9.0.1
@@ -395,6 +401,16 @@ packages:
     resolution: {integrity: sha512-GFn91inaUa2oHLak8awSIigYz0cU0Payr1rcFsrkf5OJ5eSPxElyZfKh0f2p9FsTiZWXQdWGJeXZICEfXXYSXQ==}
     dependencies:
       '@lit-labs/ssr-dom-shim': 1.2.0
+    dev: false
+
+  /@nanostores/lit@0.2.0(lit@3.1.2)(nanostores@0.9.5):
+    resolution: {integrity: sha512-slKYnuPOgS0+E0twx54SNtHqXWA0S2/Rdm/iZHHmFUyqblYRuDQlp2LrPQR6YmQwr/Ji+5/XDRUYkI1Mdy7giQ==}
+    peerDependencies:
+      lit: ^2.6.0 || ^3.0.0
+      nanostores: ^0.7 || ^0.8 || ^0.9
+    dependencies:
+      lit: 3.1.2
+      nanostores: 0.9.5
     dev: false
 
   /@nodelib/fs.scandir@2.1.5:
@@ -1625,6 +1641,11 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
     dev: true
+
+  /nanostores@0.9.5:
+    resolution: {integrity: sha512-Z+p+g8E7yzaWwOe5gEUB2Ox0rCEeXWYIZWmYvw/ajNYX8DlXdMvMDj8DWfM/subqPAcsf8l8Td4iAwO1DeIIRQ==}
+    engines: {node: ^16.0.0 || ^18.0.0 || >=20.0.0}
+    dev: false
 
   /natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
