@@ -26,7 +26,7 @@ class CategoryPatch extends LitElement {
     return html`
       <select
         @change=${this.handleChange}
-        class="p-2 w-full bg-gray-50 min-w-20"
+        class="p-2 w-full bg-gray-50 min-w-[5rem]"
       >
         ${this.categories.length > 0
           ? repeat(
