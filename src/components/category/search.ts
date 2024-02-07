@@ -1,7 +1,7 @@
 import { LitElement, html } from "lit";
 import { customElement, state } from "lit/decorators.js";
 import { withTwind } from "src/utils/twindDecorator";
-import { $filterCategory } from "src/store/filterText";
+import { $filterCategory } from "src/store/filters";
 import { categoryApi, type CategoryEntry } from "src/api/localCategoryApi";
 import { repeat } from "lit/directives/repeat.js";
 
@@ -21,7 +21,11 @@ class CategorySearch extends LitElement {
   }
   protected render() {
     return html`
-      <select @change=${this.handleChange} class="p-2 h-full bg-gray-50">
+      <select
+        @change=${this.handleChange}
+        class="p-2 h-full bg-gray-50"
+        title="Select by category"
+      >
         ${this.categories.length > 0
           ? html`<option value="">All</option>
               ${repeat(
