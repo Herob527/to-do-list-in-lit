@@ -4,12 +4,12 @@ import { repeat } from "lit/directives/repeat.js";
 import "src/components/text/patch";
 import { withTwind } from "src/utils/twindDecorator";
 import { textsApi, type TextEntry } from "src/api/localTextsApi";
-import { $filterCategory } from "src/store/filterText";
+import { $filterCategory, $filterText } from "src/store/filters";
 
 import { useStores } from "@nanostores/lit";
 @customElement("texts-container")
 @withTwind()
-@useStores($filterCategory)
+@useStores($filterCategory, $filterText)
 class TextsContainer extends LitElement {
   @property({
     state: true,
@@ -28,13 +28,16 @@ class TextsContainer extends LitElement {
 
   render() {
     const { items } = this;
-    const text = $filterCategory.get();
-    console.log(text, items);
+    const category = $filterCategory.get();
+    const text = $filterText.get();
     return items.length > 0
       ? html`
           ${repeat<TextEntry>(
-            text !== ""
-              ? items.filter((el) => el.category.includes(text))
+            category !== "" || text !== ""
+              ? items.filter(
+                  (el) =>
+                    el.category.includes(category) && el.value.includes(text),
+                )
               : items,
             (item) => item.id,
             (item) =>
