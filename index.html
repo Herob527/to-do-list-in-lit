@@ -12,6 +12,7 @@
     <script type="module" src="/src/components/category/search.ts"></script>
     <script type="module" src="/src/components/category/post.ts"></script>
     <script type="module" src="/src/components/category/delete.ts"></script>
+    <script type="module" src="/src/components/remaining-space.ts"></script>
   </head>
   <body class="flex flex-col h-screen bg-gray-50">
     <div class="flex flex-row gap-2 py-2 px-4 bg-gray-200">
@@ -35,6 +36,9 @@
       <div class="p-2 basis-[25%] bg-gray-100 h-full flex flex-col gap-2">
         <category-post></category-post>
         <category-delete></category-delete>
+        <remaining-space
+          class="flex flex-col gap-2 items-center p-2 text-center rounded-xl border-2 border-gray-300"
+        ></remaining-space>
       </div>
     </main>
   </body>
