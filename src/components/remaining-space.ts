@@ -30,7 +30,10 @@ class RemainingSpace extends LitElement {
               <p
                 class="py-2 px-4 w-full bg-gray-50 rounded-xl border-2 border-gray-300"
               >
-                ${(this.storage.usage / 1024 ** 2).toFixed(2)} kB used
+                ${(Math.ceil(this.storage.usage / 1024 ** 2 / 5) * 5).toFixed(
+                  2,
+                )}
+                kB used
               </p>`
           : null,
       complete: (estimate) =>
@@ -39,7 +42,8 @@ class RemainingSpace extends LitElement {
               <p
                 class="py-2 px-4 w-full bg-gray-50 rounded-xl border-2 border-gray-300"
               >
-                ${(estimate.usage / 1024 ** 2).toFixed(2)} kB used
+                ${(Math.ceil(estimate.usage / 1024 ** 2 / 5) * 5).toFixed(2)} kB
+                used
               </p>`
           : null,
       error: () => html`<p>Error</p>`,
