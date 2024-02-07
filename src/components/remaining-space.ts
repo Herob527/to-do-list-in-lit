@@ -25,25 +25,30 @@ class RemainingSpace extends LitElement {
   render() {
     return this._getEstimate.render({
       pending: () =>
-        this.storage?.usage
+        this.storage?.usage !== undefined
           ? html`<p>Local storage usage in kB</p>
               <p
                 class="py-2 px-4 w-full bg-gray-50 rounded-xl border-2 border-gray-300"
               >
-                ${(Math.ceil(this.storage.usage / 1024 ** 2 / 5) * 5).toFixed(
+                ~${(Math.ceil(this.storage.usage / 1024 ** 2 / 5) * 5).toFixed(
                   2,
                 )}
                 kB used
               </p>`
-          : null,
+          : html`<p>Local storage usage in kB</p>
+              <p
+                class="py-2 px-4 w-full bg-gray-50 rounded-xl border-2 border-gray-300"
+              >
+                Estimating...
+              </p> `,
       complete: (estimate) =>
-        estimate?.usage && estimate?.quota
+        estimate?.usage !== undefined && estimate?.quota !== undefined
           ? html`<p>Local storage usage in kB</p>
               <p
                 class="py-2 px-4 w-full bg-gray-50 rounded-xl border-2 border-gray-300"
               >
-                ${(Math.ceil(estimate.usage / 1024 ** 2 / 5) * 5).toFixed(2)} kB
-                used
+                ~${(Math.ceil(estimate.usage / 1024 ** 2 / 2) * 2).toFixed(2)}
+                kB used
               </p>`
           : null,
       error: () => html`<p>Error</p>`,
