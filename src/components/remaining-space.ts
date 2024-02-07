@@ -9,7 +9,6 @@ class RemainingSpace extends LitElement {
   private _getEstimate = new Task(this, {
     task: async () => {
       const estimate = await navigator.storage.estimate();
-      console.log(estimate);
       return estimate;
     },
     args: () => [],
@@ -21,7 +20,6 @@ class RemainingSpace extends LitElement {
     });
   }
   render() {
-    console.log("test");
     return this._getEstimate.render({
       pending: () =>
         html` <p>Local storage usage in kB</p>
