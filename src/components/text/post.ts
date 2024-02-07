@@ -12,7 +12,7 @@ class TextPost extends LitElement {
         @click=${this.addItem}
         class="py-2 px-4 bg-gray-50 transition-colors hover:bg-gray-200"
       >
-        <span>Add</span>
+        <span>Add entry</span>
       </button>
     `;
   }
