@@ -2,6 +2,7 @@ import { LitElement, html } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 import { repeat } from "lit/directives/repeat.js";
 import { categoryApi, type CategoryEntry } from "src/api/localCategoryApi";
+import { $filterCategory, $filterText } from "src/store/filters";
 import { withTwind } from "src/utils/twindDecorator";
 
 @customElement("category-delete")
@@ -58,6 +59,8 @@ class CategoryDelete extends LitElement {
   }
   private removeItem() {
     categoryApi.deleteItem(this.category);
+    $filterCategory.set("");
+    $filterText.set("");
   }
 }
 
