@@ -1,11 +1,14 @@
-import { LitElement, html } from "lit";
+import { LitElement, css, html, unsafeCSS } from "lit";
 import { customElement, query, state } from "lit/decorators.js";
 import { categoryApi } from "src/api/localCategoryApi";
-import { withTwind } from "src/utils/twindDecorator";
+import style from "@unocss/reset/tailwind.css?inline";
 
 @customElement("category-post")
-@withTwind()
 class CategoryPost extends LitElement {
+  static styles = css`
+    ${unsafeCSS(style)};
+    @unocss-placeholder;
+  `;
   @query("input")
   element!: HTMLInputElement;
 

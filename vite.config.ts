@@ -1,8 +1,15 @@
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
+import UnoCSS from "unocss/vite";
 
 export default defineConfig({
-  plugins: [tsconfigPaths()],
+  plugins: [
+    tsconfigPaths(),
+    UnoCSS({
+      mode: "shadow-dom",
+    }),
+  ],
+  css: {},
   server: {
     open: true,
   },

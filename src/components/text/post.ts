@@ -1,11 +1,14 @@
-import { LitElement, html } from "lit";
+import { LitElement, css, html, unsafeCSS } from "lit";
 import { customElement } from "lit/decorators.js";
 import { textsApi } from "src/api/localTextsApi";
-import { withTwind } from "src/utils/twindDecorator";
+import style from "@unocss/reset/tailwind.css?inline";
 
 @customElement("text-post")
-@withTwind()
 class TextPost extends LitElement {
+  static styles = css`
+    ${unsafeCSS(style)};
+    @unocss-placeholder;
+  `;
   render() {
     return html`
       <button

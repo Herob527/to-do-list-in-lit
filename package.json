@@ -6,14 +6,17 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
     "@lit/task": "^1.0.0",
     "@nanostores/lit": "^0.2.0",
+    "@unocss/reset": "^0.58.5",
     "lit": "^3.1.0",
+    "modern-normalize": "^2.0.0",
     "nanostores": "^0.9.5",
+    "unocss": "^0.58.5",
     "uuid": "^9.0.1"
   },
   "devDependencies": {

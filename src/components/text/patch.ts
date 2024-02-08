@@ -1,13 +1,16 @@
-import { LitElement, html } from "lit";
+import { LitElement, html, css, unsafeCSS } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import "src/components/text/delete";
 import { textsApi } from "src/api/localTextsApi";
-import { withTwind } from "src/utils/twindDecorator";
 import "src/components/category/patch";
+import style from "@unocss/reset/tailwind.css?inline";
 
 @customElement("text-patch")
-@withTwind()
 export class TextPatch extends LitElement {
+  static styles = css`
+    ${unsafeCSS(style)};
+    @unocss-placeholder;
+  `;
   @property({ type: String })
   category: string = "";
 

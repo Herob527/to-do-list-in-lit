@@ -1,13 +1,16 @@
-import { LitElement, html } from "lit";
+import { LitElement, html, css, unsafeCSS } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 import { repeat } from "lit/directives/repeat.js";
 import { categoryApi, type CategoryEntry } from "src/api/localCategoryApi";
 import { $filterCategory, $filterText } from "src/store/filters";
-import { withTwind } from "src/utils/twindDecorator";
+import style from "@unocss/reset/tailwind.css?inline";
 
 @customElement("category-delete")
-@withTwind()
 class CategoryDelete extends LitElement {
+  static styles = css`
+    ${unsafeCSS(style)};
+    @unocss-placeholder;
+  `;
   @property({ type: Array })
   private categories: CategoryEntry[] = [];
 

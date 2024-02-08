@@ -1,12 +1,15 @@
-import { LitElement, html } from "lit";
+import { LitElement, css, html, unsafeCSS } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { repeat } from "lit/directives/repeat.js";
 import { categoryApi, type CategoryEntry } from "src/api/localCategoryApi";
-import { withTwind } from "src/utils/twindDecorator";
+import style from "@unocss/reset/tailwind.css?inline";
 
 @customElement("category-patch")
-@withTwind()
 class CategoryPatch extends LitElement {
+  static styles = css`
+    ${unsafeCSS(style)};
+    @unocss-placeholder;
+  `;
   @property({ type: Array })
   private categories: CategoryEntry[] = [];
 

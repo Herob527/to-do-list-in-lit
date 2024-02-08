@@ -1,11 +1,15 @@
-import { LitElement, html } from "lit";
+import { LitElement, css, html, unsafeCSS } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { textsApi } from "src/api/localTextsApi";
-import { withTwind } from "src/utils/twindDecorator";
+
+import style from "@unocss/reset/tailwind.css?inline";
 
 @customElement("text-delete")
-@withTwind()
 class TextDelete extends LitElement {
+  static styles = css`
+    ${unsafeCSS(style)};
+    @unocss-placeholder;
+  `;
   @property({ type: String })
   id = "";
 

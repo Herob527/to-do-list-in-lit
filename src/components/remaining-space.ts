@@ -1,11 +1,15 @@
-import { LitElement, html } from "lit";
+import { LitElement, css, html, unsafeCSS } from "lit";
 import { customElement, state } from "lit/decorators.js";
-import { withTwind } from "src/utils/twindDecorator";
+
 import { Task } from "@lit/task";
+import style from "@unocss/reset/tailwind.css?inline";
 
 @customElement("remaining-space")
-@withTwind()
 class RemainingSpace extends LitElement {
+  static styles = css`
+    ${unsafeCSS(style)};
+    @unocss-placeholder;
+  `;
   @state()
   storage: StorageEstimate | null = null;
   private _getEstimate = new Task(this, {

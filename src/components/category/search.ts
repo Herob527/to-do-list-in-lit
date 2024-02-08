@@ -1,13 +1,16 @@
-import { LitElement, html } from "lit";
+import { LitElement, css, html, unsafeCSS } from "lit";
 import { customElement, state } from "lit/decorators.js";
-import { withTwind } from "src/utils/twindDecorator";
 import { $filterCategory } from "src/store/filters";
 import { categoryApi, type CategoryEntry } from "src/api/localCategoryApi";
 import { repeat } from "lit/directives/repeat.js";
+import style from "@unocss/reset/tailwind.css?inline";
 
 @customElement("category-search")
-@withTwind()
 class CategorySearch extends LitElement {
+  static styles = css`
+    ${unsafeCSS(style)};
+    @unocss-placeholder;
+  `;
   @state()
   categories: CategoryEntry[] = [];
 

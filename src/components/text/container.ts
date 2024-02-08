@@ -1,16 +1,19 @@
-import { LitElement, html } from "lit";
+import { LitElement, css, html, unsafeCSS } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { repeat } from "lit/directives/repeat.js";
 import "src/components/text/patch";
-import { withTwind } from "src/utils/twindDecorator";
 import { textsApi, type TextEntry } from "src/api/localTextsApi";
 import { $filterCategory, $filterText } from "src/store/filters";
-
 import { useStores } from "@nanostores/lit";
+import style from "@unocss/reset/tailwind.css?inline";
+
 @customElement("texts-container")
-@withTwind()
 @useStores($filterCategory, $filterText)
 class TextsContainer extends LitElement {
+  static styles = css`
+    ${unsafeCSS(style)};
+    @unocss-placeholder;
+  `;
   @property({
     state: true,
     type: Array,
