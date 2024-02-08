@@ -31,18 +31,6 @@ dependencies:
     version: 9.0.1
 
 devDependencies:
-  '@twind/core':
-    specifier: ^1.1.3
-    version: 1.1.3(typescript@5.3.3)
-  '@twind/preset-autoprefix':
-    specifier: ^1.0.7
-    version: 1.0.7(@twind/core@1.1.3)(typescript@5.3.3)
-  '@twind/preset-tailwind':
-    specifier: ^1.1.4
-    version: 1.1.4(@twind/core@1.1.3)(typescript@5.3.3)
-  '@twind/with-web-components':
-    specifier: ^1.1.3
-    version: 1.1.3(@twind/core@1.1.3)(typescript@5.3.3)
   '@types/uuid':
     specifier: ^9.0.8
     version: 9.0.8
@@ -887,62 +875,6 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@twind/core@1.1.3(typescript@5.3.3):
-    resolution: {integrity: sha512-/B/aNFerMb2IeyjSJy3SJxqVxhrT77gBDknLMiZqXIRr4vNJqiuhx7KqUSRzDCwUmyGuogkamz+aOLzN6MeSLw==}
-    engines: {node: '>=14.15.0'}
-    peerDependencies:
-      typescript: ^4.8.4
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-    dependencies:
-      csstype: 3.1.3
-      typescript: 5.3.3
-    dev: true
-
-  /@twind/preset-autoprefix@1.0.7(@twind/core@1.1.3)(typescript@5.3.3):
-    resolution: {integrity: sha512-3wmHO0pG/CVxYBNZUV0tWcL7CP0wD5KpyWAQE/KOalWmOVBj+nH6j3v6Y3I3pRuMFaG5DC78qbYbhA1O11uG3w==}
-    engines: {node: '>=14.15.0'}
-    peerDependencies:
-      '@twind/core': ^1.1.0
-      typescript: ^4.8.4
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-    dependencies:
-      '@twind/core': 1.1.3(typescript@5.3.3)
-      style-vendorizer: 2.2.3
-      typescript: 5.3.3
-    dev: true
-
-  /@twind/preset-tailwind@1.1.4(@twind/core@1.1.3)(typescript@5.3.3):
-    resolution: {integrity: sha512-zv85wrP/DW4AxgWrLfH7kyGn/KJF3K04FMLVl2AjoxZGYdCaoZDkL8ma3hzaKQ+WGgBFRubuB/Ku2Rtv/wjzVw==}
-    engines: {node: '>=14.15.0'}
-    peerDependencies:
-      '@twind/core': ^1.1.0
-      typescript: ^4.8.4
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-    dependencies:
-      '@twind/core': 1.1.3(typescript@5.3.3)
-      typescript: 5.3.3
-    dev: true
-
-  /@twind/with-web-components@1.1.3(@twind/core@1.1.3)(typescript@5.3.3):
-    resolution: {integrity: sha512-pM2Ps58pkLQva2HsC/cm2y5kTIwojJ6896w4+kXIMCOhuoOfTeyNOkYvBdr8Cpkvm+vR+ggPITNdvpzAOXa+Dg==}
-    engines: {node: '>=14.15.0'}
-    peerDependencies:
-      '@twind/core': ^1.1.0
-      typescript: ^4.8.4
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-    dependencies:
-      '@twind/core': 1.1.3(typescript@5.3.3)
-      typescript: 5.3.3
-    dev: true
-
   /@types/estree@1.0.5:
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
 
@@ -1561,10 +1493,6 @@ packages:
     resolution: {integrity: sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==}
     engines: {node: '>=4'}
     hasBin: true
-    dev: true
-
-  /csstype@3.1.3:
-    resolution: {integrity: sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==}
     dev: true
 
   /debug@4.3.4:
@@ -2749,10 +2677,6 @@ packages:
   /strip-json-comments@3.1.1:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
     engines: {node: '>=8'}
-    dev: true
-
-  /style-vendorizer@2.2.3:
-    resolution: {integrity: sha512-/VDRsWvQAgspVy9eATN3z6itKTuyg+jW1q6UoTCQCFRqPDw8bi3E1hXIKnGw5LvXS2AQPuJ7Af4auTLYeBOLEg==}
     dev: true
 
   /sucrase@3.35.0:
